@@ -38,4 +38,4 @@ jobs:
             ./frontend
 
       - name: Show built image
-        run: docker images frontend-ci:test
+        run: docker images frontend:${{ github.sha }}
