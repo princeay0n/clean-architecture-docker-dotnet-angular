@@ -29,6 +29,11 @@ jobs:
 
       - name: Show Docker version
         run: docker --version
+        
+      - name: Audit frontend dependencies
+        working-directory: ./frontend
+        run: npm audit --audit-level=critical
+        continue-on-error: true
 
       - name: Build frontend Docker image
         run: |
