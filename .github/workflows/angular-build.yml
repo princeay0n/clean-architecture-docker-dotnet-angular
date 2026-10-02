@@ -34,7 +34,7 @@ jobs:
         run: |
           docker build \
             --file ./frontend/Dockerfile \
-            --tag frontend-ci:test \
+            --tag frontend:${{ github.sha }} \
             ./frontend
 
       - name: Show built image
